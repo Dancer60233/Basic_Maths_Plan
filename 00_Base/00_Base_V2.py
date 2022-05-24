@@ -1,3 +1,8 @@
+#Basic Maths Game Base V2
+#Aim - To add and try to understand the random generator
+
+
+
 #import library************************************************
 import random as r
 
