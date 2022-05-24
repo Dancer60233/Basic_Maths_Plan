@@ -30,9 +30,6 @@ def string_check(choice, options):
  else:
     return "invalid choice"
 
-def ran_num():
-  print("ran_num")
-
 def addition():
   print("+")
 
@@ -45,8 +42,12 @@ def division():
 def multiplication():
   print("*")
 
+def random_generator(num_1, num_2):
+    rand_num = r.randint(num_1, num_2)
+    return rand_num
 
-#Main Routine
+
+
 
 
 
@@ -66,14 +67,12 @@ operands = ["+","-","*", "/", "all"]
 
 if __name__ == "__main__":
 
-   #Local variables (for now)
-  min_num = 0
-  max_num = 5
+
 
   print("Welcome to the Basic Maths Game!!!")
 
   #Ask user for operator
-  operator = input("Pick an operator +, -, /, * or all ")
+  operand = input("Pick an operator +, -, /, * or all ")
 
   #Ask user if they want negative intergers
   negatives = input("Do you want negative numbers? ").lower()
@@ -109,9 +108,12 @@ if __name__ == "__main__":
       #When user enters all
      else:
             #this is called when user inputs all
-            min_num = 1
-            max_num = 5
+            min_num = 3
+            max_num = 7
             random_num = random_generator(min_num, max_num)
             print(random_num)
+            print("go to random generator, send min_num and max_num (1 and 5)")
+            print("then randomly go to each of the operand functions")
+\
     
   
