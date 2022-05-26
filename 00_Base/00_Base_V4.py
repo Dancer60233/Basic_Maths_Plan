@@ -94,7 +94,7 @@ yes_no = [
   ["yes", "y"],
   ["no", "n"],
 ]
-operands = ["+","-","*", "/", "all"]
+valid_operands = ["+","-","*", "/", "all"]
 
 #Questions 
 low_question = "Please enter a low number: "
@@ -111,7 +111,12 @@ if __name__ == "__main__":
   print("Welcome to the Basic Maths Game!!!")
 
   #Ask user for operator
-  operand = input("Pick an operator +, -, /, * or all ")
+  operand= "invalid choice"
+  while operand == "invalid choice":
+   operand = input("Do you want negative integers: ").lower()
+   operand = string_check(operand, valid_operands)
+   if operand == "invalid choice":
+     print("Please enter a valid choice (yes/no)")
 
   #Ask user if they want negative intergers
   want_neg_int = "invalid choice"
