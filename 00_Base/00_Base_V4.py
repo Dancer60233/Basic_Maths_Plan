@@ -1,6 +1,6 @@
 #Basic Maths Game Base V3
-#Aim - To add my integer checker component and check if the low num, high num and number of questions are integers
-#Reflection - code works just need to add more spacing so it looks nicer and come up with a better variable for question questions
+#Aim - To add my string checker component and find out if the user wants negatuive numbers
+#Reflection - Code works well and I created a space function that works
 
 
 #import library************************************************
@@ -24,7 +24,6 @@ def int_checker(question):
   return response
 
 
-  
 
 
 def string_check(choice, options):
@@ -45,6 +44,7 @@ def string_check(choice, options):
 
  else:
     return "invalid choice"
+
 
 
 
@@ -74,6 +74,9 @@ def random_generator(num_1, num_2):
     return rand_num
 
 
+def space(num_spaces):
+ for item in range (0, num_spaces):
+   print()
 
 
 
@@ -85,8 +88,8 @@ def random_generator(num_1, num_2):
 #Lists
   
 
-
 answer_list = [ ]
+
 yes_no = [
   ["yes", "y"],
   ["no", "n"],
@@ -111,23 +114,28 @@ if __name__ == "__main__":
   operand = input("Pick an operator +, -, /, * or all ")
 
   #Ask user if they want negative intergers
-  negatives = input("Do you want negative numbers? ").lower()
-  negatives = string_check(negatives , yes_no)
-  print(negatives)
-  
+  want_neg_int = "invalid choice"
+  while want_neg_int == "invalid choice":
+   want_neg_int = input("Do you want negative integers: ").lower()
+   want_neg_int = string_check(want_neg_int, yes_no)
+   if want_neg_int == "invalid choice":
+     print("Please enter a valid choice (yes/no)")
+
   #Ask user for low number
-  print()
+  space(1)
   low_num = int_checker(low_question)
 
   #Ask user for high number
-  print()
+  space(1)
   high_num = int_checker(high_question)
   
   #Ask how many questions they want
   #Temporary for testing 
-  print()
+  space(1)
   num_questions = int_checker(no_q_question)
-  
+
+
+  space(2)
   #Loop for number of questions
   for questions in range(0, num_questions):
 
@@ -156,6 +164,6 @@ if __name__ == "__main__":
             print(random_num)
             print("go to random generator, send min_num and max_num (1 and 5)")
             print("then randomly go to each of the operand functions")
-\
+
     
   
