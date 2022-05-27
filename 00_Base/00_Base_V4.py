@@ -1,5 +1,5 @@
-#Basic Maths Game Base V3
-#Aim - To add my string checker component and find out if the user wants negatuive numbers
+#Basic Maths Game Base V4
+#Aim - To add my string checker component and find out if the user wants negative numbers and to check if operand is correct
 #Reflection - Code works well and I created a space function that works
 
 
@@ -26,6 +26,7 @@ def int_checker(question):
 
 
 
+
 def string_check(choice, options):
 
  for var_list in options:
@@ -44,6 +45,8 @@ def string_check(choice, options):
 
  else:
     return "invalid choice"
+
+
 
 
 
@@ -111,14 +114,16 @@ if __name__ == "__main__":
   print("Welcome to the Basic Maths Game!!!")
 
   #Ask user for operator
+  space(1)
   operand= "invalid choice"
   while operand == "invalid choice":
-   operand = input("Do you want negative integers: ").lower()
+   operand = input("What format do you want? (+,-,/,* or all)").lower()
    operand = string_check(operand, valid_operands)
    if operand == "invalid choice":
-     print("Please enter a valid choice (yes/no)")
+     print("Please enter a valid operand")
 
   #Ask user if they want negative intergers
+  space(1)
   want_neg_int = "invalid choice"
   while want_neg_int == "invalid choice":
    want_neg_int = input("Do you want negative integers: ").lower()
