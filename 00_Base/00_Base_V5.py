@@ -1,6 +1,6 @@
 #Basic Maths Game Base V4
 #Aim - To add my basic additon component and see if it works
-#Reflection - Code works well and I created a space function that works
+#Reflection - Code works well and the error prevention works
 
 
 #import library************************************************
@@ -47,27 +47,26 @@ def string_check(choice, options):
     return "invalid choice"
 
 
-
-
 def addition():
  num_1 = random_generator(min_num, max_num)
  num_2 = random_generator(min_num, max_num)
  answer = num_1 + num_2
 
-
- try:
-  user_answer = int(input("{} + {}? ".format(num_1, num_2)))
- except:
-        print("This is not a number! ")
+ user_answer = "False"
+ while user_answer == "False":
+  try:
+   user_answer = int(input("{} + {}? ".format(num_1, num_2)))
+  except:
+    print("This is not a number! ")
    
  if user_answer == answer:
     print("correct")
-    space(1)
+    answer = "correct"
  else:
    print("incorrect")
-   space(1)
+   answer = "incorrect"
+ return answer
   
-
 
 
 def subtraction():
@@ -105,6 +104,7 @@ def space(num_spaces):
   
 
 answer_list = [ ]
+
 
 yes_no = [
   ["yes", "y"],
@@ -164,7 +164,9 @@ if __name__ == "__main__":
 
 
      if operand == "+":
-        addition()
+        answer_check = addition()
+        answer_list.append(answer_check)
+
 
 
      elif operand == "-":
@@ -180,13 +182,10 @@ if __name__ == "__main__":
 
       #When user enters all
      else:
-            #this is called when user inputs all
-            min_num = 3
-            max_num = 7
             random_num = random_generator(min_num, max_num)
             print(random_num)
             print("go to random generator, send min_num and max_num (1 and 5)")
             print("then randomly go to each of the operand functions")
 
-    
+print(answer_list)
   
