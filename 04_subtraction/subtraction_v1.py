@@ -1,8 +1,8 @@
 #30/5/22 - Kate Barber
 #Basic Maths Program
 #Subtraction Function V1
-#Aim - Use the code from my addition function and change it to subtraction
-#Reflection - 
+#Aim - Use the code from my addition function and change it to subtraction (don't worry about negative numbers yet)
+#Reflection - Code works as intended nextstep is to add if they want integers or not
 
 import random as r
 
@@ -12,16 +12,11 @@ def random_generator(num_1, num_2):
 
 
 
-def subtraction(want_neg):
- answer = 0
-   while answer == 0: 
-    num_1 = random_generator(min_num, max_num)
-    num_2 = random_generator(min_num, max_num)
-    answer = num_1 + num_2
-   while answer == 0 or answer < 0: 
-    num_1 = random_generator(min_num, max_num)
-    num_2 = random_generator(min_num, max_num)
-    answer = num_1 + num_2
+def subtraction():
+ num_1 = random_generator(min_num, max_num)
+ num_2 = random_generator(min_num, max_num)
+ answer = num_1 - num_2
+  
 
 
  user_answer = "False"
@@ -42,10 +37,10 @@ def subtraction(want_neg):
 
 score_list = []
 
-want_neg_int = input("Do you want integers ")
-min_num = 1
-max_num = 10
-answer_check = subtraction(want_neg_int)
-score_list.append(answer_check)
+for item in range(5):
+ min_num = 1
+ max_num = 10
+ answer_check = subtraction() 
+ score_list.append(answer_check)
 
 print(score_list)
