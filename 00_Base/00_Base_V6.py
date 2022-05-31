@@ -1,6 +1,6 @@
-#Basic Maths Game Base V5
-#Aim - To add my basic additon component and subtraction component 
-#Reflection - Code works as intended 
+#Basic Maths Game Base V6
+#Aim - To add my basic multiplication component and division component 
+#Reflection - 
 
 
 #import library************************************************
@@ -110,7 +110,30 @@ def division():
 
 
 def multiplication():
-  print("*")
+  num_1 = random_generator(min_num, max_num)
+  num_2 = random_generator(min_num, max_num)
+  answer = num_1 * num_2
+    
+  
+
+
+  user_answer = "False"
+  while user_answer == "False":
+   try:
+     user_answer = int(input("{} x {}? ".format(num_1, num_2)))
+   except:
+      print("This is not a number! ")
+   
+  if user_answer == answer:
+    print("correct")
+    answer = "correct"
+  else:
+   print("incorrect")
+   answer = "incorrect"
+  return answer
+  
+
+
 
 
 
@@ -209,7 +232,9 @@ if __name__ == "__main__":
       
       
      elif operand == "*":
-        multiplication()
+        answer_check = multiplication() 
+        answer_list.append(answer_check)
+
 
       #When user enters all
      else:

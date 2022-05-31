@@ -1,8 +1,8 @@
 #31/5/22 - Kate Barber
 #Basic Maths Program
-#Subtraction Function V2
-#Aim - Allows the user to decide if they want negative number or not
-#Reflection - Code works as intended
+#Divison function V1
+#Aim - Create a basic divison function that works and allows for negative numbers
+#Reflection - 
 import random as r
 
 def random_generator(num_1, num_2):
@@ -11,25 +11,25 @@ def random_generator(num_1, num_2):
 
 
 
-def subtraction():
+def divison():
   answer = 0
   if want_neg == "Yes":
     while answer == 0:
      num_1 = random_generator(min_num, max_num)
      num_2 = random_generator(min_num, max_num)
-     answer = num_1 - num_2
+     answer = num_1 / num_2
   if want_neg == "No":
     while answer == 0 or answer < 0 :
      num_1 = random_generator(min_num, max_num)
      num_2 = random_generator(min_num, max_num)
-     answer = num_1 - num_2
+     answer = num_1 / num_2
   
 
 
   user_answer = "False"
   while user_answer == "False":
    try:
-     user_answer = int(input("{} - {}? ".format(num_1, num_2)))
+     user_answer = int(input("{} / {}? ".format(num_1, num_2)))
    except:
       print("This is not a number! ")
    
@@ -47,7 +47,7 @@ want_neg = "Yes"
 for item in range(5):
  min_num = 1
  max_num = 10
- answer_check = subtraction() 
+ answer_check = divison() 
  score_list.append(answer_check)
 
 print(score_list)
