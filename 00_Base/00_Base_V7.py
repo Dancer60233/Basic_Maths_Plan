@@ -105,7 +105,7 @@ def division():
   num_1 = 1
   num_2 = 8
   if want_neg == "Yes":
-    while answer == 0 or answer == 1:
+    while answer == 0:
      num_1 = random_generator(min_num, max_num)
      num_2 = random_generator(min_num, max_num)
      if num_1%num_2 == 0:
@@ -113,7 +113,7 @@ def division():
      else:
        answer = 0
   if want_neg == "No":
-    while answer == 0 or answer < 0 or answer == 1: 
+    while answer == 0 or answer < 0: 
      num_1 = random_generator(min_num, max_num)
      num_2 = random_generator(min_num, max_num)
      if num_1%num_2 == 0:
@@ -169,6 +169,20 @@ def multiplication():
   
 
 
+def all_operands():
+  ran_num = random_generator(1, 4)
+  if ran_num == 1:
+    response = addition()
+  elif ran_num == 2:
+    response = subtraction()
+  elif ran_num == 3:
+    response = division()
+  elif ran_num == 4:
+    response = multiplication()
+
+  return response
+  
+ 
 
 
 
@@ -276,10 +290,11 @@ if __name__ == "__main__":
 
       #When user enters all
      else:
-            random_num = random_generator(min_num, max_num)
-            print(random_num)
-            print("go to random generator, send min_num and max_num (1 and 5)")
-            print("then randomly go to each of the operand functions")
+       answer_check = all_operands()
+       answer_list.append(answer_check)
+        
+        
+            
 
 print(answer_list)
   
