@@ -2,7 +2,8 @@
 #Basic Maths Program
 #Divison function V1
 #Aim - Create a basic divison function that works and allows for negative numbers
-#Reflection - 
+#Reflection - Code works as intended and doesn't allow decimal numbers or questions that equal 1
+
 import random as r
 
 def random_generator(num_1, num_2):
@@ -13,16 +14,25 @@ def random_generator(num_1, num_2):
 
 def divison():
   answer = 0
+  num_1 = 1
+  num_2 = 8
   if want_neg == "Yes":
-    while answer == 0:
+    while answer == 0 or answer == 1:
      num_1 = random_generator(min_num, max_num)
      num_2 = random_generator(min_num, max_num)
-     answer = num_1 / num_2
+     if num_1%num_2 == 0:
+      answer = num_1 / num_2
+     else:
+       answer = 0
   if want_neg == "No":
-    while answer == 0 or answer < 0 :
+    while answer == 0 or answer < 0 or answer == 1: 
      num_1 = random_generator(min_num, max_num)
      num_2 = random_generator(min_num, max_num)
-     answer = num_1 / num_2
+     if num_1%num_2 == 0:
+      answer = num_1 / num_2
+     else:
+       answer = 0
+       
   
 
 
@@ -43,8 +53,8 @@ def divison():
   
 
 score_list = []
-want_neg = "Yes"
-for item in range(5):
+want_neg = "No"
+for item in range(10):
  min_num = 1
  max_num = 10
  answer_check = divison() 
